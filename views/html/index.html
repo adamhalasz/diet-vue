@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <!-- document title -->
+        <title><%- this.title %></title>
+        
+        <!-- include vue.js and socket.io -->
+        <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+        <script src="/scripts/vue.min.js" type="text/javascript"></script>
+        
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="/styles/index.css" type="text/css" />
+        
+        <!-- data binding -->
+        <script>
+            
+            window.onload = function(){
+                
+                // Vue Data Binding
+                window.vueInstance = new Vue({
+                    // The Vue Instance parent element
+                    el: '#app',
+                    
+                    // Pass ECT template data values to Vue (from $.data)
+                    data: {
+                        title: "<%- this.title %>",
+                        description: "<%- this.description %>",
+                        counter: "<%- this.counter %>"
+                    }, 
+                    methods: {
+                        save : function(key, event){
+                            var value = event.target.value;
+                            console.log('saving %s to %s', key, value)
+                            socket.emit('save', key, value)
+                        }
+                    }
+                })
+                
+                // Socket.io
+                var socket = io()
+                var timeouts = { title: null, description: null, counter: null }
+                socket.on('update', function(key, value){
+                    // Log the update
+                    console.log('updating "%s" to "%s"', key, value)
+                    
+                    // Save value to vue instance
+                    vueInstance[key] = value
+                })
+            }
+        </script>
+    </head>
+    <body id="app">
+        <!-- Meta Data -->
+        <section>
+            <h1>Title: {{title}}</h1>
+            <h2>Description: {{description}}</h2>
+        </section>
+        
+        <!-- Counter (updated by socket.io and vue)-->
+        <section>
+            <h3>Counter: {{counter}}</h3>
+        </section>
+        
+        <!-- Inputs -->
+        <section>
+            <label>Title:</label>
+            <input v-model="title" v-on:keyup="save('title', $event)" /><br><br>
+        </section>
+        
+        <section>
+            <label>Description:</label>
+            <textarea v-model="description" v-on:keyup="save('description', $event)"></textarea>
+        </section>   
+        
+        <section>   
+            <label>Counter:</label>
+            <input v-model="counter" v-on:keyup="save('counter', $event)"/>
+        </section>
+    </body>
+</html>

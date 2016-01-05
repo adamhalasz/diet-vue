@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding: 40px;
+    font-family: lucida grande, tahoma, sans-serif;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+section{
+    padding-bottom: 10px;
+}
+
+h1{
+    font-size: 30px;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+h2{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: normal;
+    color: #999;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+input, textarea{
+    padding: 6px 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+
+label{
+    clear: both;
+    width: 100%;
+    margin-top: 10px;
+    float: left;
+    font-weight: bold;
+}
