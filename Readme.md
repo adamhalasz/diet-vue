@@ -26,6 +26,9 @@ node index.js
 http://localhost:5000/
 ```
 
+
+## License
+
 The MIT License (MIT)
 
 Copyright (c) 2016 Ádám Halász
