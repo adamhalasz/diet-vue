@@ -38,7 +38,6 @@
                 
                 // Socket.io
                 var socket = io()
-                var timeouts = { title: null, description: null, counter: null }
                 socket.on('update', function(key, value){
                     // Log the update
                     console.log('updating "%s" to "%s"', key, value)
