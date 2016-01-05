@@ -1,6 +1,9 @@
 # Diet + Vue + Socket.io
 A tiny example on how to use Diet.js as the Router/Static File Handler, Vue for Dynamic Data Binding and Socket.io for Real-time Data Dinding.
 
+![Diet.js + Vue.js + Socket.io](http://g.recordit.co/szNjnYjmo1.gif)
+
+
 # Features
 - Updates a counter every second and streams the new value to all connected user agents with socket.io
 - Shares server side data with client side. Uses the ECT template engine to pass the signal ($) `data` values to the Vue Instance
