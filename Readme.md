@@ -1,5 +1,5 @@
 # Diet + Vue + Socket.io
-A tiny example on how to use Diet.js as the Router/Static File Handler, Vue for Dynamic Data Binding and Socket.io for Real-time Data Dinding.
+A tiny example on how to use Diet.js as the Router/Static File Handler, Vue for Dynamic Data Binding and Socket.io for Real-time Data Streaming.
 
 ![Diet.js + Vue.js + Socket.io](http://g.recordit.co/szNjnYjmo1.gif)
 

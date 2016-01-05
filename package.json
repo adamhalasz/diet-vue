@@ -1,6 +1,6 @@
 {
   "name": "diet-vue",
-  "description": "A tiny example on how to use Diet.js as the Router/Static File Handler, Vue for Dynamic Data Binding and Socket.io for Real-time Data Dinding.",
+  "description": "A tiny example on how to use Diet.js as the Router/Static File Handler, Vue for Dynamic Data Binding and Socket.io for Real-time Data Streaming.",
   "version": "1.0.0",
   "dependencies": {
     "diet": "^v0.9.26",
